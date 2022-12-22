@@ -2,7 +2,7 @@ const Footer = () => {
 
     return (
         <div className="footer">
-         <p>Small React App about Video Game Deals</p>
+         <small>Small React App about Video Game Deals</small>
         </div>
     )
 }

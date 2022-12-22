@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import React from "react"
 import axios from 'axios';
 import Store from "./Store"
-import {useLocation} from 'react-router-dom'
 
 const Stores:React.FC = () => {
     const [stores, setStores] = useState([]);
