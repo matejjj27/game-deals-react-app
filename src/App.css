@@ -26,6 +26,10 @@ body {
   margin-bottom: 70px;
 }
 
+.games h1 {
+  margin-top: 0px;
+}
+
 .game {
   display: inline-block;
   margin: 15px;

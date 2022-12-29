@@ -51,11 +51,8 @@ const Games:React.FC = () => {
 
     return (
         <div className='games'>
-         <div className='header'>
           <h1>Games</h1>
-          <input id="searchBar" type="search" placeholder='Search for games' />
-          <button onClick={searchGames}>Search</button>
-         </div>
+          <input id="searchBar" type="search" placeholder='Search for games' onChange={searchGames}/>
          <>{<ShowAllGames/>}</>
         </div>
     )

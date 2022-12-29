@@ -4,6 +4,6 @@ interface IUserContext {
     name: string;
 }
 
-const UserContext = createContext<IUserContext>({name: "Guest"});
+const UserContext = createContext<IUserContext>({} as IUserContext);
 
 export {UserContext};

@@ -25,9 +25,7 @@ const Stores:React.FC = () => {
 
     return (
         <div className='games'>
-         <div className='header'>
           <h1>Stores</h1>
-         </div>
          <>{<ShowAllStores/>}</>
         </div>
     )
