@@ -1,22 +1,21 @@
-import { useContext } from 'react';
-import { UserContext } from "../hooks/use-user"
+import  { useUser } from "../hooks/use-user"
 
 const Profile = () => {
 
-    const user = useContext(UserContext);
+    const { user, toggleUser } = useUser();
 
     const handleClick = () => {
         const button = document.getElementById('name-bar') as HTMLInputElement
         let user1 = button.value;
-        user.name = user1;
+        toggleUser(user1);
     }
 
     return (
-        <>
-        <h2>Name: {user.name}</h2>
+        <div className='header'>
+        <h2>Name: {user}</h2>
         <input id="name-bar" placeholder='Change name'/>
         <button onClick={handleClick}>Save</button>
-        </>
+        </div>
     )
 }
 

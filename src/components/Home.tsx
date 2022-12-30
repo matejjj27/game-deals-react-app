@@ -1,13 +1,12 @@
-import { useContext } from 'react';
-import { UserContext } from '../hooks/use-user';
+import { useUser } from '../hooks/use-user';
 
 const Home = () => {
 
-    const context = useContext(UserContext);
+    const { user } = useUser();
     
     return(
         <>
-            <h1>Welcome {context.name}!</h1>
+            <h1>Welcome {user}!</h1>
             {/* <Profile /> */}
         </>
     )
