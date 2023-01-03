@@ -9,12 +9,13 @@ import Stores from './components/Stores';
 import Profile from './components/Profile';
 import { UserProvider } from "./hooks/use-user"
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from "./state/actions";
+import { increment, decrement, logIn } from "./state/actions";
 import { RootState } from './index';
 
 const App: React.FC = () => {
   
   const counter = useSelector<RootState, number>((state) => state.counter);
+  const isLogged = useSelector<RootState, boolean>((state) => state.isLogged);
   const dispatch = useDispatch();
 
   return (
@@ -22,8 +23,10 @@ const App: React.FC = () => {
             <BrowserRouter>
             <Header />
             <h1>Counter: {counter}</h1>
-            <button onClick={() => dispatch(increment())}>+</button>
-            <button onClick={() => dispatch(decrement())}>-</button>
+            <button onClick={() => dispatch(increment(3))}>+</button>
+            <button onClick={() => dispatch(decrement(1))}>-</button><br></br>
+            <button onClick={() => dispatch(logIn())}>Log in</button>
+            {!isLogged ? <h2>You are not logged in</h2> : ""}
             <UserProvider>
               <Routes>
                 <Route path="/" element={<Home />}/>

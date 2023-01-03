@@ -1,11 +1,19 @@
-export const increment = () => {
-    return{
-        type: "INCREMENT"
+export const increment = (value: number) => {
+    return {
+        type: "INCREMENT",
+        payload: value
     };
 };
 
-export const decrement = () => {
-    return{
-        type: "DECREMENT"
+export const decrement = (value: number) => {
+    return {
+        type: "DECREMENT",
+        payload: value
     };
 };
+
+export const logIn = () => {
+    return {
+        type: "LOG IN"
+    }
+}

@@ -1,6 +1,6 @@
 import counterReducer from "./counter";
 import loggedReducer from "./isLogged";
-import { combineReducers } from "redux";
+import { combineReducers } from '@reduxjs/toolkit'
 
 const allReducers = combineReducers({
     counter: counterReducer,
