@@ -3,6 +3,7 @@ import React from "react"
 import axios from 'axios';
 import Game from "./Game"
 import {useNavigate, useLocation} from 'react-router-dom'
+import { useUser } from '../hooks/use-user';
 
 const Games:React.FC = () => {
     const [games, setGames] = useState([]);
@@ -10,6 +11,8 @@ const Games:React.FC = () => {
     const location = useLocation();
 
     const navigate = useNavigate();
+
+    const {user} = useUser();
 
     useEffect(() => {
         axios.get('https://www.cheapshark.com/api/1.0/deals')
@@ -50,10 +53,10 @@ const Games:React.FC = () => {
     }
 
     return (
-        <div className='games'>
-          <h1>Games</h1>
+        <div className='header'>
+          <h1>Games for {user}</h1>
           <input id="searchBar" type="search" placeholder='Search for games' onChange={searchGames}/>
-         <>{<ShowAllGames/>}</>
+          {<ShowAllGames/>}
         </div>
     )
 }

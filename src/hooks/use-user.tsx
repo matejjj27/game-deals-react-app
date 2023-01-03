@@ -24,8 +24,7 @@ const UserProvider = ({ children }: IUserProviderProps) => {
     }
 
     useEffect(() => {
-        if (user === null)
-            setUser('Guest');
+        setUser('Guest');
     },[])
 
     return (
