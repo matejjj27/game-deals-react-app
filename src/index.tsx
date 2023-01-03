@@ -11,7 +11,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const store = configureStore({ reducer: allReducers })
+const store = configureStore({
+  reducer: allReducers
+});
 
 export type RootState = ReturnType<typeof store.getState>;
 
