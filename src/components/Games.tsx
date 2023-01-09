@@ -1,62 +1,34 @@
-import { useState, useEffect } from 'react';
 import React from "react"
-import axios from 'axios';
 import Game from "./Game"
-import {useNavigate, useLocation} from 'react-router-dom'
 import { useUser } from '../hooks/use-user';
+import { useGame } from '../hooks/use-games';
 
 const Games:React.FC = () => {
-    const [games, setGames] = useState([]);
-
-    const location = useLocation();
-
-    const navigate = useNavigate();
 
     const {user} = useUser();
 
-    useEffect(() => {
-        axios.get('https://www.cheapshark.com/api/1.0/deals')
-        .then(response => setGames(response.data.slice(0, 15)))
-        .catch((error) => console.error(error));
-    }, [])
-
-    useEffect(() => {
-        let button = document.getElementById("searchBar") as HTMLInputElement;
-        let title = button.value;
-        axios.get(`https://www.cheapshark.com/api/1.0/deals?title=${title}`)
-        .then(response => setGames(response.data.slice(0, 15)))
-        .catch((error) => console.error(error));
-    }, [location])
+    const { games, searchGames } = useGame();
 
     const ShowAllGames = () => {
-        return <>{games.map(game => {
-            return <Game 
-                        key = {game['dealID']}
-                        title = {game['title']}
-                        normalPrice = {game['normalPrice']}
-                        salePrice = {game['salePrice']}
-                        thumbnail = {game['thumb']}
-                    />
-        })}</>
-    }
-
-    const searchGames = () => {
-        let button = document.getElementById("searchBar") as HTMLInputElement;
-        let title = button.value;
-        navigate({
-            pathname: "/games-catalogue",
-            search: `?keyword=${title}`
-        })
-        // let keyword = queryParams.get("keyword")
-        // axios.get(`https://www.cheapshark.com/api/1.0/deals?title=${keyword}`)
-        // .then(response => setGames(response.data.slice(0, 10)))
+        if(games !== null)
+            return <>{games.map(game => {
+                return <Game 
+                        key = {game.key}
+                        title = {game.title}
+                        normalPrice = {game.normalPrice}
+                        salePrice = {game.salePrice}
+                        thumb = {game.thumb}
+                        />
+            })}</>
+        else
+        return <>No Games to show</>
     }
 
     return (
         <div className='header'>
           <h1>Games for {user}</h1>
-          <input id="searchBar" type="search" placeholder='Search for games' onChange={searchGames}/>
-          {<ShowAllGames/>}
+          <input className='game-input' id="searchBar" type="search" placeholder='Search for games' onChange={searchGames}/><br></br>
+          <ShowAllGames/>
         </div>
     )
 }

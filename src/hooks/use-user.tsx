@@ -1,6 +1,6 @@
 import { useState, createContext, ReactNode, useContext, useEffect } from 'react';
 
-export interface IUserContext {
+interface IUserContext {
     user: string;
     toggleUser: any;
 }

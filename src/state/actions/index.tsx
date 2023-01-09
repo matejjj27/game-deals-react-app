@@ -14,6 +14,6 @@ export const decrement = (value: number) => {
 
 export const logIn = () => {
     return {
-        type: "LOG IN"
+        type: "LOG_IN"
     }
 }
