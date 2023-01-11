@@ -1,10 +1,13 @@
-const defaultState = { value: false };
+import { Reducer } from "@reduxjs/toolkit";
 
-type Action = {
-    type: string
+interface State {
+    value: boolean,
 }
 
-const loggedReducer = (state = defaultState, action: Action) => {
+const defaultState: State = { value: false };
+
+
+const loggedReducer: Reducer<State> = (state = defaultState, action) => {
     switch(action.type) {
         case "LOG_IN":
             return {
