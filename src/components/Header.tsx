@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { logIn } from '../state/actions';
 
-const Header = () => {
+const Header: React.FC = () => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();

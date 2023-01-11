@@ -1,6 +1,6 @@
 import { useUser } from '../hooks/use-user';
 
-const Home = () => {
+const Home: React.FC = () => {
 
     const { user } = useUser();
     

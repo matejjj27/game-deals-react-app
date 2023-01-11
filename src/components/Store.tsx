@@ -4,7 +4,7 @@ type StoreProps = {
     isActive: boolean
 }
 
-const Store:React.FC<StoreProps> = ({title, thumbnail, isActive}) => {
+const Store: React.FC<StoreProps> = ({title, thumbnail, isActive}) => {
 
     const imgUrl = `https://www.cheapshark.com/${thumbnail}`
 
