@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "..";
 import { decrement, increment } from "../state/actions";
 
-const Counter = () => {
+const Counter: React.FC = () => {
 
     const dispatch = useDispatch();
 

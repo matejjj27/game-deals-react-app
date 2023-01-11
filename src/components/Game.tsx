@@ -1,6 +1,6 @@
 import { IGameProps } from "../hooks/use-games";
 
-const Game:React.FC<IGameProps> = ({ title, normalPrice, salePrice, thumb }) => {
+const Game: React.FC<IGameProps> = ({ title, normalPrice, salePrice, thumb }) => {
     return (
         <div className="game">
             <img className="game-img" src={thumb} alt="game-img"/>

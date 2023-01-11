@@ -1,8 +1,8 @@
-import { Route, Routes } from "react-router-dom";
-import Games from "./Games";
-import Home from "./Home";
-import Profile from "./Profile";
-import Stores from "./Stores";
+import { Routes, Route } from "react-router-dom";
+import Games from "../Games";
+import Home from "../Home";
+import Profile from "../Profile";
+import Stores from "../Stores";
 
 const routes = [
     {
@@ -23,7 +23,7 @@ const routes = [
     },
   ];
   
-  const AppRoutes = () => (
+  const AppRoutes: React.FC = () => (
     <Routes>
       {routes.map(({ path, Element }) => (
         <Route key={path} path={path} element={<Element />} />

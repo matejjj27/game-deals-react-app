@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { fetchStores } from '../state/actions';
 import { IStore } from '../state/reducers/stores'
 
-const Stores:React.FC = () => {
+const Stores: React.FC = () => {
 
     const dispatch = useDispatch();
 

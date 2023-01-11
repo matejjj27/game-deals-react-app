@@ -3,7 +3,7 @@ import Game from "./Game"
 import { useUser } from '../hooks/use-user';
 import { useGames } from '../hooks/use-games';
 
-const Games:React.FC = () => {
+const Games: React.FC = () => {
 
     const {user} = useUser();
     const { games, searchGames } = useGames();

@@ -1,6 +1,6 @@
 import  { useUser } from "../hooks/use-user"
 
-const Profile = () => {
+const Profile: React.FC = () => {
 
     const { user, toggleUser } = useUser();
 
