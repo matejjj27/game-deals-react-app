@@ -1,13 +1,13 @@
 import React from "react"
 import Game from "./Game"
 import { useUser } from '../hooks/use-user';
-import { useGame } from '../hooks/use-games';
+import { useGames } from '../hooks/use-games';
 
 const Games:React.FC = () => {
 
     const {user} = useUser();
 
-    const { games, searchGames } = useGame();
+    const { games, searchGames } = useGames();
 
     const ShowAllGames = () => {
         if(games !== null)
