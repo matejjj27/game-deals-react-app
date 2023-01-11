@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "..";
-import { decrement, increment, logIn } from "../state/actions";
+import { decrement, increment } from "../state/actions";
 
 const Counter = () => {
 
@@ -31,8 +31,7 @@ const Counter = () => {
             <button onClick={() => dispatch(decrement(1))}>-1</button><br></br>
             <input type="text" id="valueBar" title="Must be a valid number" maxLength={6} size={4}/>
             <button onClick={() => changeCounter("+")}>+</button>
-            <button onClick={() => changeCounter("-")}>-</button>
-            <button onClick={() => dispatch(logIn())}>Log in</button>
+            <button onClick={() => changeCounter("-")}>-</button><br></br>
             {isLogged ? <h2>You are logged in</h2> : ""}
         </div>
     )
