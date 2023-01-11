@@ -68,4 +68,5 @@ const GameProvider = ({ children }: IGameProviderProps) => {
 const useGames = () => useContext(GameContext);
 
 export { useGames }
+
 export default GameProvider;

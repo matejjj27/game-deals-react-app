@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import React from "react"
 import Store from "./Store"
 import { useSelector } from 'react-redux/es/hooks/useSelector';
@@ -9,8 +9,6 @@ import { IStore } from '../state/reducers/stores'
 
 const Stores:React.FC = () => {
 
-    // const [stores, setStores] = useState<Array<IStore>>([]);
-
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -19,24 +17,6 @@ const Stores:React.FC = () => {
 
     const counter = useSelector<RootState, number>((state) => state.counter.value);
     const stores = useSelector<RootState, Array<IStore>>((state) => state.stores.stores);
-
-    // useEffect(() => {
-    //     axios.get('https://www.cheapshark.com/api/1.0/stores')
-    //     .then(response => setStores(response.data.slice(0, 12)))
-    //     .catch((error) => console.error(error));
-    // }, [])
-
-    // const ShowAllStores = () => {
-    //     return { stores.map((store: IStore) => {
-    //             return <Store 
-    //                     key = {store.storeID}
-    //                     title = {store.storeName}
-    //                     thumbnail = {store.images.banner}
-    //                     isActive = {store.isActive}
-    //                 />
-    //         })
-    //     }
-    // }
 
     const ShowAllStores = () => {
         return <>{stores.map(store => {
