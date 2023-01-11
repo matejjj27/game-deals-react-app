@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 export interface IGameProps {
-    key: string,
+    dealID?: string,
     title: string,
     normalPrice: number,
     salePrice: number,

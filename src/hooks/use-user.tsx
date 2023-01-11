@@ -1,4 +1,4 @@
-import { useState, createContext, ReactNode, useContext, useEffect } from 'react';
+import { useState, createContext, ReactNode, useContext } from 'react';
 
 interface IUserContext {
     user: string;
