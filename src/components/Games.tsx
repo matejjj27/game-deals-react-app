@@ -11,7 +11,7 @@ const Games:React.FC = () => {
     const ShowAllGames = () => {
         return <>{games.map(game => {
             return <Game 
-                        key = {game.key}
+                        key = {game.dealID}
                         title = {game.title}
                         normalPrice = {game.normalPrice}
                         salePrice = {game.salePrice}
