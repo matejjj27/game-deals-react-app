@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import GameProvider from '../../hooks/use-games';
+import { UserProvider } from '../../hooks/use-user';
 
 interface IProvider {
     Provider: FC,
@@ -40,6 +42,11 @@ const InitProviders = ({ providers, children }: IInitProviderProps) => {
         );
 };
 
-export default InitProviders;
+const Providers = [
+    UserProvider,
+    GameProvider,
+] as ProviderType[];
 
-export type { ProviderType };
+export { Providers };
+
+export default InitProviders;
