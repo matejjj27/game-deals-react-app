@@ -1,11 +1,12 @@
-const defaultState = { value: 0 };
+import { Reducer } from "@reduxjs/toolkit";
 
-type Action = {
-    type: string,
-    payload: number
+interface State {
+    value: number,
 }
 
-const counterReducer = (state = defaultState, action: Action) => {
+const defaultState: State = { value: 0 };
+
+const counterReducer: Reducer<State> = (state = defaultState, action) => {
     switch(action.type) {
         case "INCREMENT":
             return {

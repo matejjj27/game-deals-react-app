@@ -10,18 +10,15 @@ const Games:React.FC = () => {
     const { games, searchGames } = useGames();
 
     const ShowAllGames = () => {
-        if(games !== null)
-            return <>{games.map(game => {
-                return <Game 
+        return <>{games.map(game => {
+            return <Game 
                         key = {game.key}
                         title = {game.title}
                         normalPrice = {game.normalPrice}
                         salePrice = {game.salePrice}
                         thumb = {game.thumb}
-                        />
-            })}</>
-        else
-        return <>No Games to show</>
+                    />
+        })}</>
     }
 
     return (

@@ -1,29 +1,42 @@
 import { useState, useEffect } from 'react';
 import React from "react"
-import axios from 'axios';
 import Store from "./Store"
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { RootState } from '..';
-
-interface IStoreState {
-    storeID: string,
-    storeName: string,
-    isActive: boolean,
-    images: {
-        banner: string,
-        logo: string,
-        icon: string
-    }
-}
+import { useDispatch } from 'react-redux';
+import { fetchStores } from '../state/actions';
+import { IStore } from '../state/reducers/stores'
 
 const Stores:React.FC = () => {
-    const [stores, setStores] = useState<Array<IStoreState>>([]);
+
+    // const [stores, setStores] = useState<Array<IStore>>([]);
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        axios.get('https://www.cheapshark.com/api/1.0/stores')
-        .then(response => setStores(response.data.slice(0, 12)))
-        .catch((error) => console.error(error));
+        fetchStores(dispatch);
     }, [])
+
+    const counter = useSelector<RootState, number>((state) => state.counter.value);
+    const stores = useSelector<RootState, Array<IStore>>((state) => state.stores.stores);
+
+    // useEffect(() => {
+    //     axios.get('https://www.cheapshark.com/api/1.0/stores')
+    //     .then(response => setStores(response.data.slice(0, 12)))
+    //     .catch((error) => console.error(error));
+    // }, [])
+
+    // const ShowAllStores = () => {
+    //     return { stores.map((store: IStore) => {
+    //             return <Store 
+    //                     key = {store.storeID}
+    //                     title = {store.storeName}
+    //                     thumbnail = {store.images.banner}
+    //                     isActive = {store.isActive}
+    //                 />
+    //         })
+    //     }
+    // }
 
     const ShowAllStores = () => {
         return <>{stores.map(store => {
@@ -35,8 +48,6 @@ const Stores:React.FC = () => {
                     />
         })}</>
     }
-
-    const counter = useSelector<RootState, number>((state) => state.counter.value);
 
     return (
         <div className='games'>
