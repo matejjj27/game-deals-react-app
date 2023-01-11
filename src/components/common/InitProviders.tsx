@@ -42,6 +42,4 @@ const InitProviders = ({ providers, children }: IInitProviderProps) => {
 
 export default InitProviders;
 
-export type {
-    ProviderType,
-};
+export type { ProviderType };

@@ -26,7 +26,8 @@ const storesReducer: Reducer<State> = (state = defaultState, action) => {
             }
         case "FETCH_STORES_FAIL":
             return {
-                ...state
+                ...state,
+                stores: action.payload,
             }
         default:
             return state;

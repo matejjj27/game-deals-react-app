@@ -41,14 +41,3 @@ export const fetchStores = async (dispatch: any): Promise<FetchUsersAction> => {
         return dispatch({ type: 'FETCH_STORES_FAIL', payload: error });
     }
 }
-
-// export const fetchStores = (dispatch: any) => {
-//     return async function(dispatch: any) {
-//         try {
-//           const response = await axios.get('https://www.cheapshark.com/api/1.0/stores');
-//           dispatch({ type: 'FETCH_USERS_SUCCESS', payload: response.data.slice(0, 12) });
-//         } catch (error) {
-//             return error;
-//         }
-//       }
-// }

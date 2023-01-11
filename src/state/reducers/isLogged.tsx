@@ -6,7 +6,6 @@ interface State {
 
 const defaultState: State = { value: false };
 
-
 const loggedReducer: Reducer<State> = (state = defaultState, action) => {
     switch(action.type) {
         case "LOG_IN":

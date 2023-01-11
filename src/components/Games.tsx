@@ -6,7 +6,6 @@ import { useGames } from '../hooks/use-games';
 const Games:React.FC = () => {
 
     const {user} = useUser();
-
     const { games, searchGames } = useGames();
 
     const ShowAllGames = () => {

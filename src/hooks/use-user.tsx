@@ -12,7 +12,7 @@ interface IUserProviderProps {
 const UserContext = createContext<IUserContext>({} as IUserContext);
 
 const UserProvider = ({ children }: IUserProviderProps) => {
-    const [user, setUser] = useState<any | null>(null)
+    const [user, setUser] = useState<any | null>("Guest")
 
     const toggleUser = (name: string) => {
         setUser(name);
@@ -23,10 +23,6 @@ const UserProvider = ({ children }: IUserProviderProps) => {
         toggleUser
     }
 
-    useEffect(() => {
-        setUser('Guest');
-    },[])
-
     return (
         <UserContext.Provider value={value}>
             { children }
@@ -36,4 +32,4 @@ const UserProvider = ({ children }: IUserProviderProps) => {
 
 const useUser = () => useContext(UserContext);
 
-export { useUser, UserContext, UserProvider };
+export { useUser, UserProvider };
