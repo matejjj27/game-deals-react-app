@@ -10,11 +10,12 @@ const loggedReducer: Reducer<State> = (state = defaultState, action) => {
     switch(action.type) {
         case "LOG_IN":
             return {
-                ...state,
-                value: !state
+                value: !state.value,
             };
         default:
-            return state;
+            return {
+                value: state.value,
+            };
     }
 }
 
