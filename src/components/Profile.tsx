@@ -14,8 +14,8 @@ const Profile: React.FC = () => {
     }
 
     return (
-        <div className='header'>
-        <h2>Name: {user}</h2>
+        <div className='games'>
+        <h1>Name: {user}</h1>
         <input id="name-bar" placeholder='Change name' size={10}/>
         <button onClick={handleClick}>Save</button>
         </div>
