@@ -1,10 +1,10 @@
-type StoreProps = {
+interface IStoreProps {
     title: string,
     thumbnail: string,
     isActive: boolean
 }
 
-const Store: React.FC<StoreProps> = ({title, thumbnail, isActive}) => {
+const Store: React.FC<IStoreProps> = ({title, thumbnail, isActive}) => {
 
     const imgUrl = `https://www.cheapshark.com/${thumbnail}`
 

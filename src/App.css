@@ -57,11 +57,12 @@ body {
 
 .game-img {
   height: 80px;
-  width: 90%;
+  width: 80%;
 }
 
 .store-img {
-  max-width: 200px;
+  height: 45px;
+  width: 90%;
 }
 
 .img {
