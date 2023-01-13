@@ -21,9 +21,11 @@ const Games: React.FC = () => {
     }
 
     return (
-        <div className='header'>
+        <div className='games'>
           <h1>Games for {user}</h1>
-          <input className='game-input' id="searchBar" type="search" placeholder='Search for games' onChange={searchGames}/><br></br>
+          <input className='game-input' id="searchBar" type="search" placeholder='Search for games' size={14}/>
+          <button onClick={searchGames}>Search</button>
+          <br></br>
           <ShowAllGames/>
         </div>
     )

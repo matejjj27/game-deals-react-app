@@ -1,6 +1,6 @@
 import counterReducer from "./counter";
 import loggedReducer from "./isLogged";
-import storesReducer from "./stores";
+import storesReducer from "./fetchStores";
 import { combineReducers } from '@reduxjs/toolkit'
 
 const allReducers = combineReducers({
