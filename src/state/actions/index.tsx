@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IStore } from "../reducers/stores";
+import { IStore } from "../reducers/fetchStores";
 
 export const increment = (value: number) => {
     return {
@@ -21,17 +21,17 @@ export const logIn = () => {
     }
 }
 
-interface FetchUsersSuccessAction {
+interface FetchStoresSuccessAction {
     type: 'FETCH_USERS_SUCCESS';
     payload: IStore[];
 }
   
-interface FetchUsersErrorAction {
+interface FetchStoresErrorAction {
     type: 'FETCH_USERS_ERROR';
     payload: string;
 }
 
-type FetchUsersAction = FetchUsersSuccessAction | FetchUsersErrorAction
+type FetchUsersAction = FetchStoresSuccessAction | FetchStoresErrorAction
   
 export const fetchStores = async (dispatch: any): Promise<FetchUsersAction> => {
     try {

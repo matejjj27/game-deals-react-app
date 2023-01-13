@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { RootState } from '..';
 import { useDispatch } from 'react-redux';
 import { fetchStores } from '../state/actions';
-import { IStore } from '../state/reducers/stores'
+import { IStore } from '../state/reducers/fetchStores'
 
 const Stores: React.FC = () => {
 
@@ -33,6 +33,7 @@ const Stores: React.FC = () => {
         <div className='games'>
           <h1>Stores</h1>
           <h3>Counter: {counter}</h3>
+          <br></br>
           <ShowAllStores/>
         </div>
     )
