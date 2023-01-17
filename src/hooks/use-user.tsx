@@ -2,7 +2,7 @@ import { useState, createContext, ReactNode, useContext } from 'react';
 
 interface IUserContext {
     user: string;
-    toggleUser: any;
+    toggleUser: (name: string) => void;
 }
 
 interface IUserProviderProps {
@@ -12,7 +12,7 @@ interface IUserProviderProps {
 const UserContext = createContext<IUserContext>({} as IUserContext);
 
 const UserProvider = ({ children }: IUserProviderProps) => {
-    const [user, setUser] = useState<any | null>("Guest")
+    const [user, setUser] = useState<string>("Guest");
 
     const toggleUser = (name: string) => {
         setUser(name);

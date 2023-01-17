@@ -2,11 +2,12 @@ import React from "react"
 import Game from "./Game"
 import { useUser } from '../hooks/use-user';
 import { useGames } from '../hooks/use-games';
+import SelectedGames from "./SelectedGames";
 
 const Games: React.FC = () => {
 
     const {user} = useUser();
-    const { games, searchGames } = useGames();
+    const { games, searchGames, increment } = useGames();
 
     const ShowAllGames = () => {
         return <>{games.map(game => {
@@ -16,15 +17,18 @@ const Games: React.FC = () => {
                         normalPrice = {game.normalPrice}
                         salePrice = {game.salePrice}
                         thumb = {game.thumb}
+                        quantity = {game.quantity}
+                        incrementQuantity = {() => increment(game)}
                     />
         })}</>
     }
 
     return (
         <div className='games'>
+          <SelectedGames />
           <h1>Games for {user}</h1>
           <input className='game-input' id="searchBar" type="search" placeholder='Search for games' size={14}/>
-          <button onClick={searchGames}>Search</button>
+          <button className="button-22" onClick={searchGames}>Search</button>
           <br></br>
           <ShowAllGames/>
         </div>

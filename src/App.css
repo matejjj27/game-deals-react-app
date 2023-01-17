@@ -77,56 +77,6 @@ body {
   color: red;
 }
 
-.button-51 {
-  background-color: transparent;
-  border: 1px solid #266DB6;
-  box-sizing: border-box;
-  color: #00132C;
-  font-family: "Avenir Next LT W01 Bold",sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  padding: 16px 23px;
-  position: relative;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-right: 20px;
-}
-
-.button-51:hover,
-.button-51:active {
-  outline: 0;
-}
-
-.button-51:hover {
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.button-51:before {
-  background-color: #D5EDF6;
-  content: "";
-  height: calc(100% + 3px);
-  position: absolute;
-  right: -7px;
-  top: -9px;
-  transition: background-color 200ms ease-in;
-  width: 100%;
-  z-index: -1;
-}
-
-.button-51:hover:before {
-  background-color: #6DCFF6;
-}
-
-@media (min-width: 768px) {
-  .button-51 {
-    padding: 16px 32px;
-  }
-}
-
 ul {
   list-style-type: none;
   margin: 0px;
@@ -166,3 +116,66 @@ ul {
  .game-input {
   margin-bottom: 30px;
  }
+
+ .selected-game {
+  display: inline-block;
+  border: 1px solid #266DB6;
+  background-color: #D5EDF6;
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+  padding: 5px;
+ }
+
+ .selected-game-title {
+  margin: 0px;
+ }
+
+ .selected-game-quantity {
+  display: inline-block;
+  margin: 0px;
+  margin-left: 3.5px;
+  margin-right: 0px;
+  color: #006AE8;
+}
+
+.plus-minus-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 100%;
+}
+
+.button-22 {
+  align-items: center;
+  appearance: button;
+  background-color: #0276FF;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: "RM Neue",sans-serif;
+  font-size: 95%;
+  /* line-height: 1.15; */
+  margin: 0;
+  padding: 4px 10px;
+  text-align: center;
+  text-transform: none;
+  transition: color .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-22:active {
+  background-color: #006AE8;
+}
+
+.button-22:hover {
+  background-color: #1C84FF;
+}

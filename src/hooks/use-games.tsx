@@ -8,12 +8,18 @@ export interface IGameProps {
     normalPrice: number,
     salePrice: number,
     thumb: string,
+    quantity: number,
+    incrementQuantity?: () => void,
+    decrementQuantity?: () => void,
 }
 
 interface IGamesProps {
     games: Array<IGameProps>,
-    // toggleGames: any,
-    searchGames: any,
+    selectedGames: Array<IGameProps>,
+    counter: number,
+    increment: (game: IGameProps) => void,
+    decrement: (game: IGameProps) => void,
+    searchGames: () => void,
 }
 
 interface IGameProviderProps {
@@ -24,6 +30,8 @@ const GameContext = createContext<IGamesProps>(({} as IGamesProps));
 
 const GameProvider = ({ children }: IGameProviderProps) => {
     const [games, setGames] = useState<Array<IGameProps>>([]);
+    const [selectedGames, setSelectedGames] = useState<Array<IGameProps>>([]);
+    const [counter, setCounter] = useState<number>(0);
 
     const navigate = useNavigate();
 
@@ -33,11 +41,31 @@ const GameProvider = ({ children }: IGameProviderProps) => {
         axios.get('https://www.cheapshark.com/api/1.0/deals')
         .then(response => setGames(response.data.slice(0, 12)))
         .catch((error) => console.error(error));
-    },[])
+    }, [])
 
-    // const toggleGames = (allGames: any) => {
-    //     setGames(allGames);
-    // }
+    const increment = (game: IGameProps) => {
+        if(game.quantity === undefined || game.quantity === 0) {
+            game.quantity = 1;
+            setCounter(counter => counter + 1);
+            setSelectedGames(prev => prev.concat(game))
+        }
+        else {
+            game.quantity = game.quantity + 1;
+            setCounter(counter => counter + 1);
+        }
+    }
+
+    const decrement = (game: IGameProps) => {
+        if(game.quantity === 1) {
+            let arr = selectedGames.filter(item => item.dealID !== game.dealID);
+            setSelectedGames(arr);
+        }
+
+        if(game.quantity >= 1){
+            game.quantity = game.quantity - 1;
+            setCounter(counter => counter - 1);
+        }
+    }
 
     const searchGames = () => {
         if(document.getElementById("searchBar") !== null )
@@ -54,7 +82,10 @@ const GameProvider = ({ children }: IGameProviderProps) => {
 
     const value = {
         games,
-        // toggleGames,
+        selectedGames,
+        counter,
+        increment,
+        decrement,
         searchGames,
     }
 
