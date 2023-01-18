@@ -62,6 +62,14 @@ export const selectStore = (dispatch: any, store: IStore, stores: Array<IStore>)
     }
 };
 
+export const removeStore = (dispatch: any, store: IStore, stores: Array<IStore>): Promise<SelectStoresAction> => {
+    try {
+        return dispatch({ type: 'REMOVE_STORE_SUCCESS', payload: addToFavorites(stores, store, "del") });
+    } catch (error) {
+        return dispatch({ type: 'REMOVE_STORE_ERROR', payload: error });
+    }
+};
+
 const addToFavorites = (stores: Array<IStore>, store: IStore, addOrDel: string) => {
     if(addOrDel === "add") {
         let isFavorite = false;

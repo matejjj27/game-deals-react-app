@@ -4,7 +4,7 @@ import Store from "./Store"
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { RootState } from '..';
 import { useDispatch } from 'react-redux';
-import { fetchStores, selectStore } from '../state/actions';
+import { fetchStores, removeStore, selectStore } from '../state/actions';
 import { IStore } from '../state/reducers/fetchStores'
 
 const Stores: React.FC = () => {
@@ -28,7 +28,7 @@ const Stores: React.FC = () => {
                         images = {store.images}
                         isActive = {store.isActive}
                         isFavorite = {true}
-                        // handleClick = {() => selectStore(dispatch, stores, store)}
+                        handleClick = {() => removeStore(dispatch, store, selectedStores)}
                     />
             return <></>
         })}</>
