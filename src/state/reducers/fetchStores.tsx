@@ -45,6 +45,17 @@ const storesReducer: Reducer<State> = (state = defaultState, action) => {
                 ...state,
                 selectedStores: action.payload,
             }
+        case "REMOVE_STORE_SUCCESS":
+            return {
+                ...state,
+                selectedStores: action.payload,
+                favoriteQuantity: state.selectedStores.length - 1,
+            }
+        case "REMOVE_STORE_ERROR":
+            return {
+                ...state,
+                selectedStores: action.payload,
+            }
         default:
             return state;
     }
