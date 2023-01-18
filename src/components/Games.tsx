@@ -16,8 +16,8 @@ const Games: React.FC = () => {
                         title = {game.title}
                         normalPrice = {game.normalPrice}
                         salePrice = {game.salePrice}
+                        dealRating = {game.dealRating}
                         thumb = {game.thumb}
-                        quantity = {game.quantity}
                         incrementQuantity = {() => increment(game)}
                     />
         })}</>

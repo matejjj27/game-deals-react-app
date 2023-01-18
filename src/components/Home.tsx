@@ -6,6 +6,7 @@ const Home: React.FC = () => {
     
     return(
         <div className='games'>
+            <br></br>
             <h1>Welcome {user}!</h1>
         </div>
     )
