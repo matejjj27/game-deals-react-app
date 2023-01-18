@@ -17,7 +17,7 @@ const Store: React.FC<IStore> = ({storeName, images, isActive, isFavorite, handl
         <br></br><br></br>
         {isFavorite!==true ? 
             <button className="button-22" onClick={handleClick}>Add to Favorites</button> 
-            : <button className="button-22" onClick={handleClick}>Remove</button>}
+            : <button className="button-22-remove" onClick={handleClick}>Remove</button>}
       </div>
     )
 }

@@ -49,8 +49,11 @@ const Stores: React.FC = () => {
 
     return (
         <div className='games'>
-            <h3>Favorite Stores: {favoriteQuantity}</h3>
-            {selectedStores!==undefined ? <ShowSelectedStores /> :<>Undefined</>}
+            {favoriteQuantity>0 ? 
+            <div>
+                <h3>Favorite Stores: {favoriteQuantity}</h3>
+                <ShowSelectedStores />
+            </div> : <></>}
             <h1>Stores</h1>
             <ShowAllStores />
             <br></br>
