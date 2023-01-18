@@ -60,6 +60,15 @@ body {
   width: 80%;
 }
 
+.stores-legend {
+  margin: 30px;
+  display: inline-block;
+}
+
+.stores-legend img {
+  align-self: center;
+}
+
 .store-img {
   height: 45px;
   width: 90%;
