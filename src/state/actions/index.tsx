@@ -56,7 +56,7 @@ type SelectStoresAction = SelectStoresSuccessAction | SelectStoresErrorAction;
 
 export const selectStore = (dispatch: any, store: IStore, stores: Array<IStore>): Promise<SelectStoresAction> => {
     try {
-        return dispatch({ type: 'SELECT_STORE_SUCCESS', payload: addToFavorites(stores, store, "add") });
+        return dispatch({ type: 'SELECT_STORE_SUCCESS', payload: addToFavorites(stores, store) });
     } catch (error) {
         return dispatch({ type: 'SELECT_STORE_ERROR', payload: error });
     }
@@ -64,14 +64,13 @@ export const selectStore = (dispatch: any, store: IStore, stores: Array<IStore>)
 
 export const removeStore = (dispatch: any, store: IStore, stores: Array<IStore>): Promise<SelectStoresAction> => {
     try {
-        return dispatch({ type: 'REMOVE_STORE_SUCCESS', payload: addToFavorites(stores, store, "del") });
+        return dispatch({ type: 'REMOVE_STORE_SUCCESS', payload: removeFromfavorites(stores, store) });
     } catch (error) {
         return dispatch({ type: 'REMOVE_STORE_ERROR', payload: error });
     }
 };
 
-const addToFavorites = (stores: Array<IStore>, store: IStore, addOrDel: string) => {
-    if(addOrDel === "add") {
+const addToFavorites = (stores: Array<IStore>, store: IStore) => {
         let isFavorite = false;
 
         for (let i=0; i<stores.length; i++) {
@@ -82,8 +81,9 @@ const addToFavorites = (stores: Array<IStore>, store: IStore, addOrDel: string) 
             return stores.concat(store);
         else 
             return stores;
-    }
-    else if(addOrDel === "del"){
-        return stores.filter(item => item.storeID !== store.storeID);
-    }
+
 };
+
+const removeFromfavorites = (stores: Array<IStore>, store: IStore) => {
+    return stores.filter(item => item.storeID !== store.storeID);
+}

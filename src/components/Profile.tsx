@@ -23,7 +23,7 @@ const Profile: React.FC = () => {
             <>
                 <h1>Name: {user}</h1>
                 <input id="name-bar" placeholder='Change name' size={10}/>
-                <button onClick={handleClick}>Save</button>
+                <button className="button-22" onClick={handleClick}>Save</button>
             </>
             : <h1>You have to Log in first!</h1>}
         </div>

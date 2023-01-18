@@ -194,16 +194,15 @@ ul {
   border-style: none;
   box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
   box-sizing: border-box;
-  color: #fff;
+  color: aliceblue;
   cursor: pointer;
   display: inline-block;
   flex-direction: row;
   flex-shrink: 0;
   font-family: "RM Neue",sans-serif;
-  font-size: 95%;
-  /* line-height: 1.15; */
+  font-size: 90%;
   margin: 0;
-  padding: 3px 10px;
+  padding: 3px 9px;
   text-align: center;
   text-transform: none;
   transition: color .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
@@ -212,10 +211,34 @@ ul {
   touch-action: manipulation;
 }
 
-.button-22:active {
-  background-color: #006AE8;
-}
-
 .button-22:hover {
   background-color: #1C84FF;
+}
+
+.button-22-remove {
+  align-items: center;
+  appearance: button;
+  background-color: #dc2f2f;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: aliceblue;
+  cursor: pointer;
+  display: inline-block;
+  flex-shrink: 0;
+  font-family: "RM Neue",sans-serif;
+  font-size: 90%;
+  margin: 0;
+  padding: 2px 7px;
+  text-align: center;
+  text-transform: none;
+  transition: color .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-22-remove:hover {
+  background-color: #f95959;
 }
