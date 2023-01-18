@@ -127,6 +127,11 @@ ul {
   padding: 5px;
  }
 
+ .selected-game:hover {
+  background-color: #6DCFF6;
+  transition: background-color 200ms ease-in;
+ }
+
  .selected-game-title {
   margin: 0px;
  }
@@ -139,11 +144,37 @@ ul {
   color: #006AE8;
 }
 
+/* .selected-game-regulator {
+  display: inline-block;
+  border: 1px solid #266DB6;
+  background-color: #D5EDF6;
+  padding: 1px;
+} */
+
 .plus-minus-button {
+  background-color: transparent;
+  /* color: aliceblue; */
+  border: none;
+  border-radius: 118px;
+  cursor: pointer;
+  /* color: aliceblue; */
+  font-size: 80%;
+}
+
+.plus-minus-button:hover {
+  background-color: aliceblue;
+  transition: background-color 200ms ease-in;
+}
+
+.details-button {
+  display: inline-block;
+  align-items: center;
+  appearance: button;
+  color: #006AE8;
+  border-radius: 5px;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 100%;
 }
 
 .button-22 {
@@ -163,7 +194,7 @@ ul {
   font-size: 95%;
   /* line-height: 1.15; */
   margin: 0;
-  padding: 4px 10px;
+  padding: 3px 10px;
   text-align: center;
   text-transform: none;
   transition: color .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;

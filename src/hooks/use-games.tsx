@@ -7,8 +7,9 @@ export interface IGameProps {
     title: string,
     normalPrice: number,
     salePrice: number,
+    dealRating: number,
     thumb: string,
-    quantity: number,
+    quantity?: number,
     incrementQuantity?: () => void,
     decrementQuantity?: () => void,
 }
@@ -61,7 +62,7 @@ const GameProvider = ({ children }: IGameProviderProps) => {
             setSelectedGames(arr);
         }
 
-        if(game.quantity >= 1){
+        if(game.quantity !== undefined && game.quantity >= 1){
             game.quantity = game.quantity - 1;
             setCounter(counter => counter - 1);
         }
@@ -72,7 +73,7 @@ const GameProvider = ({ children }: IGameProviderProps) => {
             button = document.getElementById("searchBar") as HTMLInputElement;
         let title = button.value;
         navigate({
-            // pathname: "/games",
+            pathname: "/games",
             search: `?keyword=${title}`
         });
         axios.get(`https://www.cheapshark.com/api/1.0/deals?title=${title}`)
