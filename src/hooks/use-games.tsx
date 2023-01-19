@@ -20,7 +20,7 @@ interface IGamesProps {
     counter: number,
     increment: (game: IGameProps) => void,
     decrement: (game: IGameProps) => void,
-    searchGames: () => void,
+    searchGames: (title: string) => void,
 }
 
 interface IGameProviderProps {
@@ -68,10 +68,10 @@ const GameProvider = ({ children }: IGameProviderProps) => {
         }
     }
 
-    const searchGames = () => {
-        if(document.getElementById("searchBar") !== null )
-            button = document.getElementById("searchBar") as HTMLInputElement;
-        let title = button.value;
+    const searchGames = (title: string) => {
+        // if(document.getElementById("searchBar") !== null )
+        //     button = document.getElementById("searchBar") as HTMLInputElement;
+        // let title = button.value;
         navigate({
             pathname: "/games",
             search: `?keyword=${title}`
