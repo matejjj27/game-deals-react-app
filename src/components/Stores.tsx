@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import React from "react"
 import Store from "./Store"
 import { useSelector } from 'react-redux/es/hooks/useSelector';
@@ -8,16 +8,20 @@ import { fetchStores, removeStore, selectStore } from '../state/actions';
 import { IStore } from '../state/reducers/fetchStores'
 
 const Stores: React.FC = () => {
+    const [favQuantity, setFavQuantity] = useState<number>(-2);
 
     const dispatch = useDispatch();
 
+    const stores = useSelector<RootState, Array<IStore>>((state) => state.stores.stores);
+    const selectedStores = useSelector<RootState, Array<IStore>>((state) => state.stores.selectedStores);
+
+    useEffect(() => {
+        setFavQuantity(selectedStores.length);
+    }, [selectedStores])
+
     useEffect(() => {
         fetchStores(dispatch);
-    }, [])
-
-    const stores = useSelector<RootState, Array<IStore>>((state) => state.stores.stores);
-    const favoriteQuantity = useSelector<RootState, number>((state) => state.stores.favoriteQuantity);
-    const selectedStores = useSelector<RootState, Array<IStore>>((state) => state.stores.selectedStores);
+    }, [dispatch])
 
     const ShowSelectedStores = () => {
         return <>{selectedStores.map(store => {
@@ -30,7 +34,6 @@ const Stores: React.FC = () => {
                         isFavorite = {true}
                         handleClick = {() => removeStore(dispatch, store, selectedStores)}
                     />
-            return <></>
         })}</>
     }
 
@@ -49,9 +52,9 @@ const Stores: React.FC = () => {
 
     return (
         <div className='games'>
-            {favoriteQuantity>0 ? 
+            {favQuantity>0 ? 
             <div>
-                <h3>Favorite Stores: {favoriteQuantity}</h3>
+                <h3>Favorite Stores: {favQuantity}</h3>
                 <ShowSelectedStores />
             </div> : <></>}
             <h1>Stores</h1>
