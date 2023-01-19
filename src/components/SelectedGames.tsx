@@ -26,7 +26,7 @@ const SelectedGames: React.FC = () => {
 
     return (
         <div>
-            <h3>Products in Cart: {counter}</h3>
+            {counter>0 && <h3>Products in Cart: {counter}</h3>}
             <ShowSelectedGames />
         </div>
     )
