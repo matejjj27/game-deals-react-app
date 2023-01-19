@@ -10,7 +10,7 @@ const SelectedGame: React.FC<IGameProps> = ({ title, salePrice, normalPrice, dea
     }
 
     return (
-        <div className="selected-game">
+        <div className="game">
             {isShown && <img className="game-img" src={thumb} alt="game-img"/>}
             <h3 className="selected-game-title">{title}</h3>
             {isShown && <><p className="normal-price">${normalPrice}</p>

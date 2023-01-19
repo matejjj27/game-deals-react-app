@@ -21,7 +21,7 @@ const Profile: React.FC = () => {
             {isLogged ?
             <>
                 <h1>Name: {user}</h1>
-                <input ref={inputRef} id="name-bar" placeholder='Change name' size={10}/>
+                <input ref={inputRef} className="game-input" id="name-bar" placeholder='Change name' size={10}/>
                 <button className="button-22" onClick={changeName}>Save</button>
             </>
             : <h1>You have to Log in first!</h1>}

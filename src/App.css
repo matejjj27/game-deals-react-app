@@ -1,5 +1,5 @@
 body {
-  background-color: aliceblue;
+  background-color: #D5EDF6;
 }
 
 .App {
@@ -45,18 +45,19 @@ body {
   margin: 15px;
   padding: 8px;
   border: 1px solid #266DB6;
-  background-color: #D5EDF6;
+  background-color: lightblue;
   text-decoration: none;
   color: black;
 }
 
+
 .game:hover {
   background-color: #6DCFF6;
-  transition: background-color 200ms ease-in;
+  transition: background-color 100ms ease-in;
 }
 
 .game-img {
-  height: 80px;
+  height: 70px;
   width: 80%;
 }
 
@@ -72,6 +73,10 @@ body {
 .store-img {
   height: 45px;
   width: 90%;
+}
+.selected-stores img {
+  height: 65%;
+  width: 85%;
 }
 
 .img {
@@ -124,21 +129,8 @@ ul {
 
  .game-input {
   margin-bottom: 30px;
- }
-
- .selected-game {
-  display: inline-block;
-  border: 1px solid #266DB6;
-  background-color: #D5EDF6;
-  text-decoration: none;
-  color: black;
-  margin: 5px;
-  padding: 5px;
- }
-
- .selected-game:hover {
-  background-color: #6DCFF6;
-  transition: background-color 200ms ease-in;
+  border-radius: 4px;
+  font-family: "RM Neue",sans-serif;
  }
 
  .selected-game-title {
@@ -184,6 +176,11 @@ ul {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.details-button:hover {
+  color: aliceblue;
+  transition: background-color 200ms ease-in;
 }
 
 .button-22 {
