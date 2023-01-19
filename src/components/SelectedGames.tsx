@@ -1,5 +1,4 @@
 import { useGames } from "../hooks/use-games";
-import { decrement } from "../state/actions";
 import SelectedGame from "./SelectedGame";
 
 const SelectedGames: React.FC = () => {
