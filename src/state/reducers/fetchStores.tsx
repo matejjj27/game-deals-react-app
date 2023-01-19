@@ -3,7 +3,6 @@ import { Reducer } from "@reduxjs/toolkit";
 interface State {
     stores: Array<IStore>,
     selectedStores: Array<IStore>,
-    favoriteQuantity: number,
 }
   
 export interface IStore {
@@ -20,7 +19,7 @@ export interface IStore {
     handleClick?: () => void,
 };
 
-const defaultState: State = {stores: [], selectedStores: [], favoriteQuantity: 0};
+const defaultState: State = {stores: [], selectedStores: []};
 
 const storesReducer: Reducer<State> = (state = defaultState, action) => {
     switch(action.type) {
@@ -38,7 +37,6 @@ const storesReducer: Reducer<State> = (state = defaultState, action) => {
             return {
                 ...state,
                 selectedStores: action.payload,
-                favoriteQuantity: state.selectedStores.length + 1,
             }
         case "SELECT_STORE_ERROR":
             return {
@@ -49,7 +47,6 @@ const storesReducer: Reducer<State> = (state = defaultState, action) => {
             return {
                 ...state,
                 selectedStores: action.payload,
-                favoriteQuantity: state.selectedStores.length - 1,
             }
         case "REMOVE_STORE_ERROR":
             return {
