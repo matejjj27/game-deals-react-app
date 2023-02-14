@@ -10,6 +10,8 @@ const Profile: React.FC = () => {
 
     const inputRef = useRef<any>(null);
 
+    console.log("profile rendered");
+
     const changeName = () => {
         if(inputRef.current.value !== "")
             toggleUser(inputRef.current.value);

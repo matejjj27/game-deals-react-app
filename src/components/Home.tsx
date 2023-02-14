@@ -7,6 +7,8 @@ const Home: React.FC = () => {
     const { user } = useUser();
 
     const isLogged = useSelector<RootState, boolean>((state) => state.isLogged.value);
+
+    console.log("Home rendered");
     
     return(
         <div className='games'>

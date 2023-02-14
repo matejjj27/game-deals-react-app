@@ -36,12 +36,22 @@ const GameProvider = ({ children }: IGameProviderProps) => {
 
     const navigate = useNavigate();
 
-    let button: HTMLInputElement;
+    // let button: HTMLInputElement;
 
     useEffect(() => {
-        axios.get('https://www.cheapshark.com/api/1.0/deals')
-        .then(response => setGames(response.data.slice(0, 12)))
-        .catch((error) => console.error(error));
+        const cancelToken = axios.CancelToken.source();
+
+        axios.get('https://www.cheapshark.com/api/1.0/deals', { cancelToken: cancelToken.token })
+            .then(response => setGames(response.data.slice(0, 12)))
+            .catch((error) => {
+                if (axios.isCancel(error)) {
+                    console.log("canceled");
+                } else {
+                    console.error(error);
+                }
+            });
+
+        return () => cancelToken.cancel();
     }, [])
 
     const increment = (game: IGameProps) => {
