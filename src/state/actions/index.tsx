@@ -36,7 +36,7 @@ type FetchStoresAction = FetchStoresSuccessAction | FetchStoresErrorAction;
 export const fetchStores = async (dispatch: any): Promise<FetchStoresAction> => {
     try {
         const response = await axios.get('https://www.cheapshark.com/api/1.0/stores');
-        return dispatch({ type: 'FETCH_STORES_SUCCESS', payload: response.data.slice(0, 12) });
+        return dispatch({ type: 'FETCH_STORES_SUCCESS', payload: response.data.slice(0, 14) });
     } catch (error) {
         return dispatch({ type: 'FETCH_STORES_ERROR', payload: error });
     }

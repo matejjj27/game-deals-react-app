@@ -11,11 +11,11 @@ const SelectedGame: React.FC<IGameProps> = ({ title, salePrice, normalPrice, dea
 
     return (
         <div className="game">
-            {isShown && <img className="game-img" src={thumb} alt="game-img"/>}
+            {isShown ? <img className="game-img" src={thumb} alt="game-img"/> : null}
             <h3 className="selected-game-title">{title}</h3>
-            {isShown && <><p className="normal-price">${normalPrice}</p>
+            {isShown ? <><p className="normal-price">${normalPrice}</p>
             <h4 className="sale-price">${salePrice}</h4>
-            <h4>Rating: {dealRating}{quantity}</h4></>}
+            <h4>Rating: {dealRating}{quantity}</h4></> : null}
             <div className="selected-game-regulator">
                 <button className="plus-minus-button" onClick={decrementQuantity}>-</button>
                 {quantity!==0 ? 

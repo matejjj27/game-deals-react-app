@@ -15,6 +15,8 @@ const Stores: React.FC = () => {
     const stores = useSelector<RootState, Array<IStore>>((state) => state.stores.stores);
     const selectedStores = useSelector<RootState, Array<IStore>>((state) => state.stores.selectedStores);
 
+    console.log("Stores rendered");
+
     useEffect(() => {
         setFavQuantity(selectedStores.length);
     }, [selectedStores])
@@ -52,7 +54,7 @@ const Stores: React.FC = () => {
 
     return (
         <div className='games'>
-            {favQuantity>0 ? 
+            {(favQuantity>0) ? 
             <div>
                 <h3>Favorite Stores: {favQuantity}</h3>
                 <ShowSelectedStores />

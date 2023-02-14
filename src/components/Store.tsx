@@ -6,12 +6,12 @@ const Store: React.FC<IStore> = ({storeName, images, isActive, isFavorite, handl
 
     return (
         <div className = "game">
-            {isFavorite !== true ?
+            {(isFavorite !== true) ?
             <div>
                 <img className="store-img" src={imgUrl} alt="store"/>
                 <h3>{storeName}</h3>
         
-                {(isActive)
+                {isActive
                 ?
                 <img className="img" alt="active" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clipartbest.com%2Fcliparts%2FniX%2FodK%2FniXodKbxT.png&f=1&nofb=1&ipt=f4bedda04ec04f0746faa49a3989955e3901520fa72c8aa2f6a4ce1fcaafc21b&ipo=images"/>
                 :

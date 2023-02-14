@@ -197,7 +197,7 @@ ul {
   flex-direction: row;
   flex-shrink: 0;
   font-family: "RM Neue",sans-serif;
-  font-size: 90%;
+  font-size: 85%;
   margin: 0;
   padding: 3px 9px;
   text-align: center;
@@ -225,7 +225,7 @@ ul {
   display: inline-block;
   flex-shrink: 0;
   font-family: "RM Neue",sans-serif;
-  font-size: 90%;
+  font-size: 80%;
   margin: 0;
   padding: 2px 7px;
   text-align: center;
