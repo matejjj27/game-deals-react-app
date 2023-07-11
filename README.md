@@ -1,4 +1,5 @@
-# Video Game Deals Project - educational
+# Video Game Deals Project
+You can browse video game deals from different stores add/remove them to/from cart, select favorite stores. This was my first project and it was used for educational purposes only.
 
 # Getting Started with Create React App
 
